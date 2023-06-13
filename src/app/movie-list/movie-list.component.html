@@ -1,0 +1,17 @@
+<div class="card-container">
+<div *ngFor="let movie of movieList" class="card" style="width: 18rem;">
+    <img class="card-img-top" [src]="imagePathGenerator(movie.poster_path)" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{movie.title}}</h5>
+      <p class="card-text">{{movie.overview}}</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Release Date : {{movie.release_date}}</li>
+      <li class="list-group-item">Language : {{movie.original_language=='en'?'English':''}}</li>
+      <li class="list-group-item">Adult : {{movie.adult?'yes':'no'}}</li>
+    </ul>
+    <div class="card-body">
+      <a routerLink="/details" [queryParams]="{ id: movie.id}" class="card-link">More Info</a>
+    </div>
+  </div>
+</div>

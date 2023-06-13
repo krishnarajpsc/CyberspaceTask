@@ -1,0 +1,29 @@
+
+<div class="details-card-container">
+    <div class="card">
+        
+        <div class="card-body">
+            <div class="image-title">
+            <img class="card-img-top" [src]="posterImage" alt="Card image cap">
+            <div>
+                <h5 class="card-title">{{movieDetails.title}}</h5>
+                <p class="card-text">{{movieDetails.overview}}</p>
+            </div>
+        </div>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Budget : {{movieDetails.budget}}$</li>
+          <li class="list-group-item">Collection : {{movieDetails.revenue}}$</li>
+          <li class="list-group-item">Duration : {{movieDetails.runtime}} min(s)</li>
+          <li class="list-group-item">Geners : <span class="genre" *ngFor="let genre of movieDetails.genres">{{genre.name}} </span></li>
+          <li class="list-group-item">Producers : <span class="production" *ngFor="let production of movieDetails.production_companies">{{production.name}} </span></li>
+          <li class="list-group-item">Status : {{movieDetails.status}}</li>
+          <li class="list-group-item">Release Date : {{movieDetails.release_date}}</li>
+          <li class="list-group-item">Language : {{movieDetails.original_language=='en'?'English':''}}</li>
+          <li class="list-group-item">Adult : {{movieDetails.adult?'yes':'no'}}</li>
+        </ul>
+        <div class="card-body">
+            <a href="{{movieDetails.homepage}}">Know More</a>
+        </div>
+      </div>
+    </div>
